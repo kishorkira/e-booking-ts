@@ -1,0 +1,40 @@
+[
+  {
+    "id": "event-1",
+    "title": "Underscore Live presents",
+    "availableTickets": 0,
+    "date": "30 June, 2022",
+    "cover": "https://hypixel.net/attachments/iyaptgtq-min-jpeg.2128305/"
+  },
+  {
+    "id": "event-2",
+    "title": "Breakfast Buffet",
+    "availableTickets": 11,
+    "date": "31 Jul, 2022",
+    "cover": "https://www.boredpanda.com/blog/wp-content/uploads/2020/07/Im-leaving-artwork-in-random-places-in-Iceland-5f10bfb7394ae__880.jpg"
+  },{
+    "id": "event-3",
+    "title": "Raghu Dixit",
+    "availableTickets": 4,
+    "date": "16 May, 2022",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3SSlByOVhD8vldkwre35QPT7hGQa8hFrK_g&usqp=CAU"
+  },{
+    "id": "event-4",
+    "title": "Raw Live & JD",
+    "availableTickets": 6,
+    "date": "25 Sep, 2022",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoobnrtLOiD0oh3LSGSnsSxxV_NrJbf7sC7g&usqp=CAU"
+  },{
+    "id": "event-5",
+    "title": "Stage Adda",
+    "availableTickets": 20,
+    "date": "30 Mar, 2022",
+    "cover": "https://www.vmcdn.ca/f/files/moosejawtoday/images/entertainment/random-honesty.jpg"
+  },{
+    "id": "event-6",
+    "title": "ACETECH Hyderabad",
+    "availableTickets": 30,
+    "date": "15 Mar, 2022",
+    "cover": "https://i.pinimg.com/736x/cf/53/59/cf5359e50f3fcc5f3a1262d90056210d.jpg"
+  }
+]
