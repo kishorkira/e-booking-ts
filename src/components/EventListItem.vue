@@ -13,13 +13,13 @@
       <span>Tickets Available: {{ event.availableTickets }}</span>
     </div>
     <b-button
-      class="col-12"
+      class="col-12 text-nowrap"
       v-if="event.availableTickets > 0"
       @click.self="$emit('book-event')"
       variant="outline-success"
       >Book event</b-button
     >
-    <b-button class="col-12" v-else disabled variant="outline-danger"
+    <b-button class="col-12 text-nowrap" v-else disabled variant="outline-danger"
       >Sold out</b-button
     >
   </b-card>
@@ -31,7 +31,7 @@ import Event from "@/models/event";
 
 @Component({})
 export default class EventListItem extends Vue  {
-  @Prop({ default: () => {}, required: true })
+  @Prop({ required: true })
   event!: Event;
 
 }
@@ -42,5 +42,10 @@ export default class EventListItem extends Vue  {
   width: 100%;
   height: 15vw;
   object-fit: cover;
+}
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

@@ -5,16 +5,16 @@
       <p>{{ event.date }}</p>
       <p>Tickets Available: {{ event.availableTickets }}</p>
     </div>
-    <div class="booking-details">
-      <div class="box-1">
+    <b-row class="booking-details">
+      <b-col sm="12" md="6" class="box-1">
         <div
           class="img-container"
           :style="{ 'background-image': `url(${event.cover})` }"
         >
           <!-- <img :src="event.cover" alt="event.title" /> -->
         </div>
-      </div>
-      <div class="box-2">
+      </b-col>
+      <b-col sm="12" md="6" class="box-2">
         <div class="booking-toast" v-if="showToast">
           <span>You have booked {{ count }} tickets</span>
         </div>
@@ -60,8 +60,8 @@
               label-for="phone"
             >
               <ValidationProvider
-                name="Phone"
-                rules="required"
+                name="Phone no"
+                rules="required|numeric|lengthRange:10,11"
                 v-slot="{ errors }"
               >
                 <b-form-input
@@ -80,6 +80,7 @@
               label-for="input-seats"
             >
               <b-form-select
+                plain
                 id="input-seats"
                 v-model="count"
                 :options="seats"
@@ -108,23 +109,26 @@
               </b-form-group>
             </template>
 
-            <b-button
-              type="submit"
-              variant="outline-primary"
-              :disabled="disableBtns"
-              >Submit</b-button
-            >
-            <b-button
-              href="#"
-              @click="$emit('cancle-booking')"
-              variant="outline-danger"
-              :disabled="disableBtns"
-              >Cancle</b-button
-            >
+            <div class="mt-2">
+              <b-button
+                class="me-3"
+                type="submit"
+                variant="outline-primary"
+                :disabled="disableBtns"
+                >Submit</b-button
+              >
+              <b-button
+                @click="$emit('cancle-booking')"
+                variant="outline-danger"
+                :disabled="disableBtns"
+                >Cancle</b-button
+              >
+            </div>
+            
           </b-form>
         </ValidationObserver>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
@@ -196,17 +200,6 @@ export default class EventBooking extends Vue {
   min-height: 70vh;
   position: relative;
 }
-.box-1,
-.box-2 {
-  position: absolute;
-  height: 90%;
-  width: 50%;
-  padding: 10px 15px;
-}
-.box-1 {
-  left: 0;
-  overflow: hidden;
-}
 .box-1 .img-container {
   background-size: contain;
   background-repeat: no-repeat;
@@ -214,8 +207,11 @@ export default class EventBooking extends Vue {
   max-width: 100%;
   max-height: 50%;
 }
-.box-2 {
-  right: 0;
-  overflow-y: scroll;
+.booking-toast {
+  background-color: green;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
 }
 </style>

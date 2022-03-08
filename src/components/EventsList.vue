@@ -37,7 +37,7 @@ import Event from "@/models/event";
   },
 })
 export default class EventList extends Vue {
-  @Prop({ default: () => [], required: true })
+  @Prop({ required: true })
   events!: Event[];
 
   search: string = "";
